@@ -1,0 +1,180 @@
+const teamMembers = [
+    {
+      name: 'Lebron James',
+      age: 36,
+      activelyPlaying: true,
+      position: 'Forward',
+      skills: ['Dribbling', 'Shooting', 'Passing'],
+      strengths: 'Ball control',
+      weaknesses: 'Heading Ability',
+      biography:
+        'Lionel Messi is considered one of the greatest football players of all time...'
+    },
+    {
+        name: 'Michael Jordan',
+        age: 36,
+        activelyPlaying: true,
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading Ability',
+        biography:
+          'Lionel Messi is considered one of the greatest football players of all time...'
+      },
+    {
+        name: 'Bugs Bunny',
+        age: 36,
+        activelyPlaying: true,
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading Ability',
+        biography:
+          'Lionel Messi is considered one of the greatest football players of all time...'
+      },
+      {
+        name: 'Daphy Duck',
+        age: 36,
+        activelyPlaying: true,
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading Ability',
+        biography:
+          'Lionel Messi is considered one of the greatest football players of all time...'
+      },
+      {
+        name: 'Lola Bunny',
+        age: 36,
+        activelyPlaying: true,
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading Ability',
+        biography:
+          'Lionel Messi is considered one of the greatest football players of all time...'
+      },
+      {
+        name: 'Sylvester Cat',
+        age: 36,
+        activelyPlaying: true,
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading Ability',
+        biography:
+          'Lionel Messi is considered one of the greatest football players of all time...'
+      },
+      {
+        name: 'Tweety Bird',
+        age: 36,
+        activelyPlaying: true,
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading Ability',
+        biography:
+          'Lionel Messi is considered one of the greatest football players of all time...'
+      },
+      {
+        name: 'Porky Pig',
+        age: 36,
+        activelyPlaying: true,
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading Ability',
+        biography:
+          'Lionel Messi is considered one of the greatest football players of all time...'
+      },
+      {
+        name: 'Foghorn Leghorn',
+        age: 36,
+        activelyPlaying: true,
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading Ability',
+        biography:
+          'Lionel Messi is considered one of the greatest football players of all time...'
+      },
+      {
+        name: 'Tasmanian Devil',
+        age: 36,
+        activelyPlaying: true,
+        position: 'Forward',
+        skills: ['Dribbling', 'Shooting', 'Passing'],
+        strengths: 'Ball control',
+        weaknesses: 'Heading Ability',
+        biography:
+          'Lionel Messi is considered one of the greatest football players of all time...'
+      },
+  ]
+  
+  function generateTeamCards() {
+    const teamCardsContainer = document.getElementById('teamCards')
+  
+    teamMembers.forEach(member => {
+      const card = document.createElement('div')
+      card.classList.add('col-md-4')
+  
+      //styling card based on position:
+      let backgroundColor
+  
+      switch (member.position.toLowerCase()) {
+        case 'forward':
+          backgroundColor = 'red' // Yellow for forwards
+          break
+        case 'midfielder':
+          backgroundColor = 'blue' // Green for midfielders
+          break
+        case 'defender':
+          backgroundColor = 'yellow' // Blue for defenders
+          break
+        case 'goalkeeper':
+          backgroundColor = '#dc3545' // Red for goalkeepers
+          break
+        default:
+          backgroundColor = '#6c757d' // Gray for other positions
+      }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      card.style.backgroundColor = backgroundColor
+  
+  
+  
+  
+  
+      //Create a list of Skills with <li> tags
+      const skillsList = member.skills
+        .map(skill => `<li> ${skill} </li>`).join('')
+  
+      card.innerHTML = `
+              <div class = "card">
+                  <div class = "card-header"> ${member.name}</div>
+                  <div class = "card-body">
+                      <p><strong>Position:</strong> ${member.position}</p>
+                      <p><strong>Skills:</strong> 
+                          <ul>
+                              ${skillsList}
+                          </ul>
+                      </p>
+                      <p><strong>Strengths:</strong> ${member.strengths}</p>
+                      <p><strong>Weaknesses:</strong> ${member.weaknesses}</p>
+                      <p><strong>Biography:</strong> ${member.biography}</p>
+                  </div>
+              </div>
+          `
+  
+      teamCardsContainer.appendChild(card)
+    })
+  }
+  
+  window.onload = generateTeamCards()
